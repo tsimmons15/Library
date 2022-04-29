@@ -1,5 +1,6 @@
 package dev.simmons.controllers;
 
+import dev.simmons.aspects.Secured;
 import dev.simmons.entities.Book;
 import dev.simmons.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +37,15 @@ public class BookController {
 
     @PostMapping("/books")
     @ResponseBody
+    @Secured
     public Book insertBook(@RequestBody Book book) {
         return this.service.registerBook(book);
+    }
+
+    @PostMapping("/thing")
+    @ResponseBody
+    public String insertBook(@RequestBody String thing) {
+        return "I love this " + thing;
     }
 
     @PatchMapping("/books/{id}/checkout")
