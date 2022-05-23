@@ -13,6 +13,7 @@ import java.util.List;
 
 @Component
 @Controller
+@CrossOrigin("*")
 public class BookController {
     @Autowired
     private BookService service;
@@ -37,7 +38,7 @@ public class BookController {
 
     @PostMapping("/books")
     @ResponseBody
-    @Secured
+    //@Secured
     public Book insertBook(@RequestBody Book book) {
         return this.service.registerBook(book);
     }

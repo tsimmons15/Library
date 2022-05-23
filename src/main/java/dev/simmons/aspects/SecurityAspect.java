@@ -34,7 +34,7 @@ public class SecurityAspect {
         return null;
     }
 
-    //@Pointcut("@annotation(dev.simmons.aspects.Secured)")
-    @Pointcut("execution(* dev.simmons.controllers.BookController.insertBook(..))")
+    @Pointcut("@annotation(dev.simmons.aspects.Secured)")
+    //@Pointcut("execution(* dev.simmons.controllers.BookController.insertBook(..))")
     private void securityJP() {}
 }
